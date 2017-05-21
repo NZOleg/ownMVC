@@ -1,18 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: NZOle
- * Date: 21/05/2017
- * Time: 2:17 PM
- */
 
 namespace App;
 
 
 class Db
 {
+    protected $dbh;
     public function __construct()
     {
-        echo 'Hello Db';
+        $this->dbh = new \PDO('mysql:host=localhost;dbname=test', 'root', '');
+    }
+    public function execute($sql){
+        $sth = $this->dbh->prepare($sql);
+        $res=$sth->execute();
+        return $res;
     }
 }
