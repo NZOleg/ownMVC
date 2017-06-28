@@ -5,8 +5,9 @@ namespace App;
 
 class Db
 {
+    use Singleton;
     protected $dbh;
-    public function __construct()
+    protected function __construct()
     {
         //local machine's username and password
         $this->dbh = new \PDO('mysql:host=localhost;dbname=test', 'root', '');

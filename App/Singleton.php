@@ -9,7 +9,7 @@
 namespace App;
 
 
-class Singleton
+trait Singleton
 {
     protected static $instance;
     protected function __construct()
@@ -17,9 +17,9 @@ class Singleton
 
     }
     public static function instance(){
-        if (null === self::$instance)
-            self::$instance = new self;
-        return self::$instance;
+        if (null === static::$instance)
+            static::$instance = new static;
+        return static::$instance;
     }
 
 }
