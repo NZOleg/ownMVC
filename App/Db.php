@@ -12,9 +12,9 @@ class Db
         //local machine's username and password
         $this->dbh = new \PDO('mysql:host=localhost;dbname=test', 'root', '');
     }
-    public function execute($sql){
+    public function execute($sql, $params = []){
         $sth = $this->dbh->prepare($sql);
-        $res=$sth->execute();
+        $res=$sth->execute($params);
         return $res;
     }
     public function query($sql, $class){

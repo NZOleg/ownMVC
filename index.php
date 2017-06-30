@@ -2,5 +2,4 @@
 
 require __DIR__. '/autoload.php';
 
-$users = \App\Models\User::findAll();
-var_dump($users);
+include __DIR__ . '/App/templates/index.php';
