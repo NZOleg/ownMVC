@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
-<h1>Hello, world!</h1>
-<?php foreach ($users as $user) :?>
+<h1><?=$this->title ?></h1>
+<?php foreach ($this->users as $user) :?>
 <div class="card">
     <div class=".card-header"><?php echo $user->name; ?></div>
     <div class="card-block"><?php echo $user->email; ?></div>
