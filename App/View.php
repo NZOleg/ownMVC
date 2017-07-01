@@ -25,9 +25,16 @@ class View
     }
     public function render($path){
         ob_start();
-        include $path;
 
+
+
+        foreach ($this->data as $k => $v){
+            $$k = $v;
+        }
+
+        include $path;
         $content = ob_get_contents();
+
         ob_end_clean();
         return $content;
     }
