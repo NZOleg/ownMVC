@@ -1,10 +1,8 @@
 <?php
 
 require __DIR__. '/autoload.php';
-$view = new \App\View();
+
+$controller = new \App\Controllers\News();
+$controller->action('Index');
 
 
-$view->news = \App\Models\News::findAll();
-$view->title = 'Hey, you!';
-
-$view->display(__DIR__.'/App/templates/index.php');
