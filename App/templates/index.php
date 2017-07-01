@@ -10,10 +10,13 @@
 </head>
 <body>
 <h1><?=$title ?></h1>
-<?php foreach ($users as $user) :?>
+<?php foreach ($news as $article) :?>
 <div class="card">
-    <div class=".card-header"><?php echo $user->name; ?></div>
-    <div class="card-block"><?php echo $user->email; ?></div>
+    <div class=".card-header"><?php echo $article->title; ?></div>
+    <div class="card-block"><?php echo $article->lead; ?></div>
+    <?php if (!empty($article->author)): ?>
+        Author: <?=$article->author->name ?>
+    <?php endif; ?>
 </div>
 <?php endforeach; ?>
 <!-- jQuery first, then Tether, then Bootstrap JS. -->

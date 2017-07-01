@@ -41,4 +41,14 @@ class News
                 return null;
         }
     }
+
+    public function __isset($name)
+    {
+        switch ($name){
+            case 'author':
+                return true;
+            default:
+                return false;
+        }
+    }
 }
