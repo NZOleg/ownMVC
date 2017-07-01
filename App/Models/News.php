@@ -11,6 +11,12 @@ namespace App\Models;
 
 use App\Model;
 
+/**
+ * Class News
+ * @package App\Models
+ *
+ * @property \App\Models\Author $author
+ */
 class News
     extends Model
 {
@@ -20,4 +26,19 @@ class News
     public $lead;
     public $author_id;
 
+    /**
+     * Lazy Load
+     * @param $name
+     * @return null
+     */
+    public function __get($name)
+    {
+        switch ($name){
+            case 'author':
+                return Author::findById($this->author_id);
+                break;
+            default:
+                return null;
+        }
+    }
 }
